@@ -1,35 +1,34 @@
+import uuid from 'uuid/dist/v4'
 const initialState = {
     lists: [
             {
-                id: 1,
-                name: 'Teams'
+                id: uuid(),
+                name: 'Teams',
+                items:  [
+                    {
+                        id: uuid(),
+                        name: 'Product',
+                        desc: '3 Pending task to be picked by Raj'
+                    },
+                    {
+                        id: uuid(),
+                        name: 'Sales',
+                        desc: 'Send Proposals to Puneet for Sale Prices'
+                    }
+                ]
             },
             {   
-                id: 2,
-                name: 'Products'
+                id: uuid(),
+                name: 'Products',
+                items: [
+                    {
+                        id: uuid(),
+                        name: 'UAT Testing',
+                        desc: 'Ask Engg to setup testing infra'
+                    }
+                ]
             }
-    ],
-    listItems: {
-        '1': [
-            {
-                id: 1,
-                name: 'Product',
-                desc: '3 Pending task to be picked by Raj'
-            },
-            {
-                id: 2,
-                name: 'Sales',
-                desc: 'Send Proposals to Puneet for Sale Prices'
-            }
-        ],
-        '2': [
-            {
-                id: 1,
-                name: 'UAT Testing',
-                desc: 'Ask Engg to setup testing infra'
-            }
-        ]
-    }
+    ]
 };
 
 export default initialState;

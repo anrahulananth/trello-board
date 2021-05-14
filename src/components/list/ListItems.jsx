@@ -22,7 +22,7 @@ const ListItem = ({ listItem, listId }) => {
     };
 
     return (
-        <Card style={{ marginTop: '20px', marginBottom: '20px' }}>
+        <Card style={{ marginTop: '20px', marginBottom: '20px', paddingTop: '20px', paddingBottom: '20px' }}>
             <Card.Body>
                 <Card.Title>
                     {name}&nbsp;&nbsp;<Card.Link href="#" onClick={handleListItemDelete}><BsX /></Card.Link>
