@@ -7,21 +7,22 @@ import ListContainer from './components/listContainer'
 
 const App = () =>  {
   const dispatch = useDispatch();
-  const updateState = (key, data) => {
-    if (key === 'lists') {
-      dispatch({
-        type: 'SET_LIST',
-        payload: data
-      });
-    } else {
-      dispatch({
-        type: 'SET_LIST_ITEM',
-        payload: data
-      });
-    }
-  };
+
 
   useEffect(() => {
+    const updateState = (key, data) => {
+      if (key === 'lists') {
+        dispatch({
+          type: 'SET_LIST',
+          payload: data
+        });
+      } else {
+        dispatch({
+          type: 'SET_LIST_ITEM',
+          payload: data
+        });
+      }
+    };
     Object.keys(initialState).forEach((key) => {
         const stateData = JSON.parse(localStorage.getItem(key));
         if(!stateData) {
@@ -34,7 +35,7 @@ const App = () =>  {
           updateState(key, stateData);
         }
     }); 
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="App">
